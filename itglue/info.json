@@ -1,0 +1,599 @@
+{
+  "name": "itglue",
+  "label": "ITGlue",
+  "description": "ITGlue is IT documentation software designed to help you maximize the efficiency, transparency and consistency of your team. This connector facilitates automated operations such as organizations, locations, configurations, domains, and flexible assets",
+  "publisher": "Secure Cyber Defense, LLC",
+  "cs_approved": false,
+  "cs_compatible": true,
+  "version": "1.0.0",
+  "category": "IT Services",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "help_online": "",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "description": "Specify the URL of the ITGlue server to which you will connect and perform automated operations. For example, https://api.itglue.com.",
+        "type": "text",
+        "name": "server",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "value": "https://api.itglue.com"
+      },
+      {
+        "title": "API Key",
+        "name": "api_key",
+        "description": "Specify the API Key that is configured for your account for using the ITGlue APIs.",
+        "type": "password",
+        "visible": true,
+        "editable": true,
+        "required": true
+      },
+      {
+        "title": "Verify SSL",
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not.\nBy default, this option is set as True.",
+        "name": "verify_ssl",
+        "type": "checkbox",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "value": true
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "get_organizations",
+      "title": "Get Organizations",
+      "category": "investigation",
+      "description": "Retrieves all organizations or specific organization from ITGlue based on the input parameters you have specified.",
+      "annotation": "get_organizations",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Organization ID",
+          "description": "Specify the ID of the organization based on which you want to retrieve organizations from ITGlue.",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "type": "integer",
+          "name": "org_id"
+        },
+        {
+          "title": "Organization Name",
+          "description": "Specify the Name of the organization based on which you want to retrieve organizations from ITGlue.",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "type": "text",
+          "name": "org_name"
+        },
+        {
+          "title": "Organization Type ID",
+          "description": "Specify the Type ID of the organization based on which you want to retrieve organizations from ITGlue.",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "type": "integer",
+          "name": "org_type_id"
+        },
+        {
+          "title": "Organization Status ID",
+          "description": "Specify the Status ID of the organization based on which you want to retrieve organizations from ITGlue.",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "type": "integer",
+          "name": "org_status_id"
+        },
+        {
+          "title": "Created At",
+          "description": "Specify the DateTime when the organizations were created in ITGlue, and from when you want to retrieve organizations from ITGlue.",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "type": "datetime",
+          "name": "created_at"
+        },
+        {
+          "title": "Updated At",
+          "description": "Specify the DateTime when the organizations were updated in ITGlue, and from when you want to retrieve organizations from ITGlue.",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "type": "datetime",
+          "name": "updated_at"
+        },
+        {
+          "title": "Page Size",
+          "description": "Specify the number of results, per page, that you want to include in the response of this operation. The maximum number of results per page is set to 50 items.",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "type": "integer",
+          "name": "page_size",
+          "value": 50
+        },
+        {
+          "title": "Page Number",
+          "description": "Page number from which you want to retrieve records. The header of the response contains the number of the next page and the total number of results.",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "type": "integer",
+          "name": "page_number",
+          "value": 1
+        },
+        {
+          "title": "Additional Fields",
+          "name": "additional_fields",
+          "type": "json",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "tooltip": "Additional fields, in the JSON format, based on which you want to retrieve organizations from ITGlue.",
+          "description": "Additional fields, in the JSON format, based on which you want to retrieve organizations from ITGlue."
+        }
+      ],
+      "output_schema": [
+        {
+          "id": "",
+          "type": "",
+          "attributes": {
+            "name": "",
+            "alert": "",
+            "description": "",
+            "organization-type-id": "",
+            "organization-type-name": "",
+            "organization-status-id": "",
+            "organization-status-name": "",
+            "primary": "",
+            "logo": "",
+            "quick-notes": "",
+            "short-name": "",
+            "created-at": "",
+            "updated-at": ""
+          }
+        }
+      ]
+    },
+    {
+      "operation": "get_locations",
+      "title": "Get Locations",
+      "category": "investigation",
+      "description": "Retrieves all locations or specific location from ITGlue based on the input parameters you have specified.",
+      "annotation": "get_locations",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Organization ID",
+          "description": "Specify the ID of the organization based on which you want to retrieve locations from ITGlue.",
+          "required": true,
+          "visible": true,
+          "editable": true,
+          "type": "integer",
+          "name": "org_id"
+        },
+        {
+          "title": "Location ID",
+          "description": "Specify the ID of the location based on which you want to retrieve locations from ITGlue.",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "type": "integer",
+          "name": "loc_id"
+        },
+        {
+          "title": "Location Name",
+          "description": "Specify the Name of the location based on which you want to retrieve locations from ITGlue.",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "type": "text",
+          "name": "loc_name"
+        },
+        {
+          "title": "Country",
+          "description": "Specify the ID of the country based on which you want to retrieve locations from ITGlue.",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "type": "integer",
+          "name": "country_id"
+        },
+        {
+          "title": "Region ID",
+          "description": "Specify the ID of the region based on which you want to retrieve locations from ITGlue.",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "type": "integer",
+          "name": "region_id"
+        },
+        {
+          "title": "Page Size",
+          "description": "Specify the number of results, per page, that you want to include in the response of this operation. The maximum number of results per page is set to 50 items.",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "type": "integer",
+          "name": "page_size",
+          "value": 50
+        },
+        {
+          "title": "Page Number",
+          "description": "Page number from which you want to retrieve records. The header of the response contains the number of the next page and the total number of results.",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "type": "integer",
+          "name": "page_number",
+          "value": 1
+        },
+        {
+          "title": "Additional Fields",
+          "name": "additional_fields",
+          "type": "json",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "tooltip": "Additional fields, in the JSON format, based on which you want to retrieve locations from ITGlue.",
+          "description": "Additional fields, in the JSON format, based on which you want to retrieve locations from ITGlue."
+        }
+      ],
+      "output_schema": [
+        {
+          "id": "",
+          "type": "",
+          "attributes": {
+            "organization-id": "",
+            "organization-name": "",
+            "name": "",
+            "primary": "",
+            "address-1": "",
+            "address-2": "",
+            "city": "",
+            "postal-code": "",
+            "region-id": "",
+            "region-name": "",
+            "country-id": "",
+            "country-name": "",
+            "phone": "",
+            "fax": "",
+            "notes": "",
+            "created-at": "",
+            "updated-at": "",
+            "formatted-phone": "",
+            "formatted-fax": ""
+          }
+        }
+      ]
+    },
+    {
+      "operation": "get_configurations",
+      "title": "Get Configurations",
+      "category": "investigation",
+      "description": "Retrieves all configurations or specific configuration from ITGlue based on the input parameters you have specified.",
+      "annotation": "get_configurations",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Organization ID",
+          "description": "Specify the ID of the organization based on which you want to retrieve configurations from ITGlue.",
+          "required": true,
+          "visible": true,
+          "editable": true,
+          "type": "integer",
+          "name": "org_id"
+        },
+        {
+          "title": "Configuration ID",
+          "description": "Specify the ID of the configuration based on which you want to retrieve configurations from ITGlue.",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "type": "integer",
+          "name": "config_id"
+        },
+        {
+          "title": "Configuration Name",
+          "description": "Specify the Name of the configuration based on which you want to retrieve configurations from ITGlue.",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "type": "text",
+          "name": "config_name"
+        },
+        {
+          "title": "Configuration Type ID",
+          "description": "Specify the Type ID of the configuration based on which you want to retrieve configurations from ITGlue.",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "type": "integer",
+          "name": "config_type_id"
+        },
+        {
+          "title": "Configuration Status ID",
+          "description": "Specify the Status ID of the region based on which you want to retrieve locations from ITGlue.",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "type": "integer",
+          "name": "config_status_id"
+        },
+        {
+          "title": "Page Size",
+          "description": "Specify the number of results, per page, that you want to include in the response of this operation. The maximum number of results per page is set to 50 items.",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "type": "integer",
+          "name": "page_size",
+          "value": 50
+        },
+        {
+          "title": "Page Number",
+          "description": "Page number from which you want to retrieve records. The header of the response contains the number of the next page and the total number of results.",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "type": "integer",
+          "name": "page_number",
+          "value": 1
+        },
+        {
+          "title": "Additional Fields",
+          "name": "additional_fields",
+          "type": "json",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "tooltip": "Additional fields, in the JSON format, based on which you want to retrieve locations from ITGlue.",
+          "description": "Additional fields, in the JSON format, based on which you want to retrieve locations from ITGlue."
+        }
+      ],
+      "output_schema": [
+        {
+          "id": "",
+          "type": "",
+          "attributes": {
+            "organization-id": "",
+            "organization-name": "",
+            "resource-url": "",
+            "name": "",
+            "hostname": "",
+            "primary-ip": "",
+            "mac-address": "",
+            "serial-number": "",
+            "asset-tag": "",
+            "position": "",
+            "installed-by": "",
+            "purchased-by": "",
+            "notes": "",
+            "operating-system-notes": "",
+            "warranty-expires-at": "",
+            "installed-at": "",
+            "purchased-at": "",
+            "created-at": "",
+            "updated-at": "",
+            "organization-short-name": "",
+            "configuration-type-id": "",
+            "configuration-type-name": "",
+            "configuration-type-kind": "",
+            "configuration-status-id": "",
+            "configuration-status-name": "",
+            "manufacturer-id": "",
+            "manufacturer-name": "",
+            "model-id": "",
+            "model-name": "",
+            "operating-system-id": "",
+            "operating-system-name": "",
+            "location-id": "",
+            "location-name": "",
+            "archived": ""
+          },
+          "relationships": {
+            "configuration-interfaces": {
+              "data": [
+                {
+                  "id": "",
+                  "type": ""
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "operation": "get_domains",
+      "title": "Get Domains",
+      "category": "investigation",
+      "description": "Retrieves all domains or specific domain from ITGlue based on the input parameters you have specified.",
+      "annotation": "get_domains",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Organization ID",
+          "description": "Specify the ID of the organization based on which you want to retrieve domains from ITGlue.",
+          "required": true,
+          "visible": true,
+          "editable": true,
+          "type": "integer",
+          "name": "org_id"
+        },
+        {
+          "title": "Domain ID",
+          "description": "Specify the ID of the domain based on which you want to retrieve domains from ITGlue.",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "type": "integer",
+          "name": "domain_id"
+        },
+        {
+          "title": "Page Size",
+          "description": "Specify the number of results, per page, that you want to include in the response of this operation. The maximum number of results per page is set to 50 items.",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "type": "integer",
+          "name": "page_size",
+          "value": 50
+        },
+        {
+          "title": "Page Number",
+          "description": "Page number from which you want to retrieve records. The header of the response contains the number of the next page and the total number of results.",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "type": "integer",
+          "name": "page_number",
+          "value": 1
+        },
+        {
+          "title": "Additional Fields",
+          "name": "additional_fields",
+          "type": "json",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "tooltip": "Additional fields, in the JSON format, based on which you want to retrieve locations from ITGlue.",
+          "description": "Additional fields, in the JSON format, based on which you want to retrieve locations from ITGlue."
+        }
+      ],
+      "output_schema": [
+        {
+          "id": "",
+          "type": "",
+          "attributes": {
+            "organization-id": "",
+            "organization-name": "",
+            "resource-url": "",
+            "name": "",
+            "screenshot": "",
+            "registrar-name": "",
+            "notes": "",
+            "expires-on": "",
+            "updated-at": ""
+          }
+        }
+      ]
+    },
+    {
+      "operation": "get_flexible_asset",
+      "title": "Get Flexible Asset",
+      "category": "investigation",
+      "description": "Retrieves all flexible assets from ITGlue based on the input parameters you have specified.",
+      "annotation": "get_flexible_asset",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Flexible Asset Type ID",
+          "description": "Specify the Type ID of the flexible asset based on which you want to retrieve flexible assets from ITGlue.",
+          "required": true,
+          "visible": true,
+          "editable": true,
+          "type": "integer",
+          "name": "flex_type_id"
+        },
+        {
+          "title": "Flexible Asset Name",
+          "description": "Specify the Name of the flexible asset based on which you want to retrieve flexible assets from ITGlue.",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "type": "text",
+          "name": "flexible_asset_name"
+        },
+        {
+          "title": "Organization ID",
+          "description": "Specify the ID of the organization based on which you want to retrieve flexible assets from ITGlue.",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "type": "integer",
+          "name": "org_id"
+        },
+        {
+          "title": "Page Size",
+          "description": "Specify the number of results, per page, that you want to include in the response of this operation. The maximum number of results per page is set to 50 items.",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "type": "integer",
+          "name": "page_size",
+          "value": 50
+        },
+        {
+          "title": "Page Number",
+          "description": "Page number from which you want to retrieve records. The header of the response contains the number of the next page and the total number of results.",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "type": "integer",
+          "name": "page_number",
+          "value": 1
+        },
+        {
+          "title": "Additional Fields",
+          "name": "additional_fields",
+          "type": "json",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "tooltip": "Additional fields, in the JSON format, based on which you want to retrieve flexible assets from ITGlue.",
+          "description": "Additional fields, in the JSON format, based on which you want to retrieve flexible assets from ITGlue."
+        }
+      ],
+      "output_schema": {
+        "id": "",
+        "type": "",
+        "attributes": {
+          "organization-id": "",
+          "organization-name": "",
+          "resource-url": "",
+          "restricted": "",
+          "my-glue": "",
+          "flexible-asset-type-id": "",
+          "flexible-asset-type-name": "",
+          "name": "",
+          "traits": {
+            "type": "",
+            "domains": {
+              "type": "",
+              "values": [
+                {
+                  "id": "",
+                  "name": "",
+                  "organization-name": ""
+                }
+              ]
+            },
+            "email-servers": {
+              "type": "",
+              "values": [
+                {
+                  "id": "",
+                  "name": "",
+                  "hostname": "",
+                  "organization-name": "",
+                  "configuration-type-name": ""
+                }
+              ]
+            },
+            "location": "",
+            "inbound-delivery": "",
+            "webmail-url": ""
+          },
+          "archived": "",
+          "created-at": "",
+          "updated-at": ""
+        }
+      }
+    }
+  ]
+}

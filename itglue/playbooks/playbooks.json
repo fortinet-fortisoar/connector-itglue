@@ -1,0 +1,532 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "@type": "WorkflowCollection",
+      "name": "Sample - ITGlue - 1.0.0",
+      "description": null,
+      "visible": true,
+      "image": null,
+      "uuid": "e50eba1a-a259-4f21-b75d-200674ae2979",
+      "id": 399,
+      "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+      "createDate": 1656412567.164544,
+      "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+      "modifyDate": 1656412567.164544,
+      "deletedAt": null,
+      "importedBy": [],
+      "recordTags": [],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Configurations",
+          "aliasName": null,
+          "tag": null,
+          "description": "Retrieves all configurations or specific configuration from ITGlue based on the input parameters you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1656412770,
+          "collection": "/api/3/workflow_collections/e50eba1a-a259-4f21-b75d-200674ae2979",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/952546af-065a-4feb-aa6a-13718f7bb55d",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Configurations",
+              "description": null,
+              "arguments": {
+                "name": "ITGlue",
+                "config": "",
+                "params": {
+                  "org_id": 1,
+                  "config_id": "",
+                  "page_size": 50,
+                  "config_name": "",
+                  "page_number": 1,
+                  "config_type_id": "",
+                  "config_status_id": "",
+                  "additional_fields": ""
+                },
+                "version": "1.0.0",
+                "connector": "itglue",
+                "operation": "get_configurations",
+                "operationTitle": "Get Configurations",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "5572aa8e-71ef-4a8a-8a64-796161c7de5a"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "a3f1b8fe-d891-414f-9a5e-2dbcc3ebfb12",
+                "title": "ITGlue: Get Configurations",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "952546af-065a-4feb-aa6a-13718f7bb55d"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Configurations",
+              "targetStep": "/api/3/workflow_steps/5572aa8e-71ef-4a8a-8a64-796161c7de5a",
+              "sourceStep": "/api/3/workflow_steps/952546af-065a-4feb-aa6a-13718f7bb55d",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "fbf68a21-c526-44f7-becb-cb2952e37477"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "15f55019-0e14-4e9a-9d10-376d54e3d513",
+          "id": 3440,
+          "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "createDate": 1656412738.748594,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1656412764.78456,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "itglue"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Flexible Asset",
+          "aliasName": null,
+          "tag": null,
+          "description": "Retrieves all flexible assets from ITGlue based on the input parameters you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1656412891,
+          "collection": "/api/3/workflow_collections/e50eba1a-a259-4f21-b75d-200674ae2979",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/06111de8-6e7c-49c7-8e4c-cd68c75ec8cc",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "2cdac5b2-72d3-43c7-9ece-225afce3f963",
+                "title": "ITGlue: Get Flexible Asset",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "06111de8-6e7c-49c7-8e4c-cd68c75ec8cc"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Flexible Asset",
+              "description": null,
+              "arguments": {
+                "name": "ITGlue",
+                "config": "",
+                "params": {
+                  "org_id": "",
+                  "page_size": 50,
+                  "page_number": 1,
+                  "flex_type_id": 1,
+                  "additional_fields": "",
+                  "flexible_asset_name": ""
+                },
+                "version": "1.0.0",
+                "connector": "itglue",
+                "operation": "get_flexible_asset",
+                "operationTitle": "Get Flexible Asset",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "d6652609-7e87-45c8-ad6c-0396f81e4722"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Flexible Asset",
+              "targetStep": "/api/3/workflow_steps/d6652609-7e87-45c8-ad6c-0396f81e4722",
+              "sourceStep": "/api/3/workflow_steps/06111de8-6e7c-49c7-8e4c-cd68c75ec8cc",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "156e8427-1f64-4871-bf58-a2092900446d"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "55ce43d8-fc66-436e-8e92-191973f31f5e",
+          "id": 3442,
+          "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "createDate": 1656412857.53462,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1656412888.872658,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "itglue"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Locations",
+          "aliasName": null,
+          "tag": null,
+          "description": "Retrieves all locations or specific location from ITGlue based on the input parameters you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1656412719,
+          "collection": "/api/3/workflow_collections/e50eba1a-a259-4f21-b75d-200674ae2979",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/8b95f031-ecb6-41ef-bf33-db213b800cd0",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Locations",
+              "description": null,
+              "arguments": {
+                "name": "ITGlue",
+                "config": "",
+                "params": {
+                  "loc_id": "",
+                  "org_id": 1,
+                  "loc_name": "",
+                  "page_size": 50,
+                  "region_id": "",
+                  "country_id": "",
+                  "page_number": 1,
+                  "additional_fields": ""
+                },
+                "version": "1.0.0",
+                "connector": "itglue",
+                "operation": "get_locations",
+                "operationTitle": "Get Locations",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "6e8b6a9b-81aa-4bce-bc48-f44b3d1af69a"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "8d813137-0b62-4ae1-94b9-177c43bfdd3c",
+                "title": "ITGlue: Get Locations",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "8b95f031-ecb6-41ef-bf33-db213b800cd0"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Locations",
+              "targetStep": "/api/3/workflow_steps/6e8b6a9b-81aa-4bce-bc48-f44b3d1af69a",
+              "sourceStep": "/api/3/workflow_steps/8b95f031-ecb6-41ef-bf33-db213b800cd0",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "10c69170-8eac-4304-a14b-d485ea8c08f4"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "cc517d0e-ceff-43bf-9366-03be78dc8d6c",
+          "id": 3439,
+          "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "createDate": 1656412685.098144,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1656412714.335477,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "itglue"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Organizations",
+          "aliasName": null,
+          "tag": null,
+          "description": "Retrieves all organizations or specific organization from ITGlue based on the input parameters you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1656412632,
+          "collection": "/api/3/workflow_collections/e50eba1a-a259-4f21-b75d-200674ae2979",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/c12d1bcd-20f9-450a-8365-a9668ebbb7ab",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Organizations",
+              "description": null,
+              "arguments": {
+                "name": "ITGlue",
+                "config": "",
+                "params": {
+                  "org_id": "",
+                  "org_name": "",
+                  "page_size": 50,
+                  "created_at": "",
+                  "updated_at": "",
+                  "org_type_id": "",
+                  "page_number": 1,
+                  "org_status_id": "",
+                  "additional_fields": ""
+                },
+                "version": "1.0.0",
+                "connector": "itglue",
+                "operation": "get_organizations",
+                "operationTitle": "Get Organizations",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "8023dd68-a3a6-40e5-bb22-5593c07afc16"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "ac968b9b-50fe-4818-a3cd-7ed697adb4cd",
+                "title": "ITGlue: Get Organizations",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "c12d1bcd-20f9-450a-8365-a9668ebbb7ab"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Organizations",
+              "targetStep": "/api/3/workflow_steps/8023dd68-a3a6-40e5-bb22-5593c07afc16",
+              "sourceStep": "/api/3/workflow_steps/c12d1bcd-20f9-450a-8365-a9668ebbb7ab",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "28e11b82-af56-4797-9806-b4792d489cf8"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "e187613e-77f7-4a1f-842d-24266267fc08",
+          "id": 3438,
+          "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "createDate": 1656412593.261257,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1656412626.745151,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "itglue"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Domains",
+          "aliasName": null,
+          "tag": null,
+          "description": "Retrieves all domains or specific domain from ITGlue based on the input parameters you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1656412837,
+          "collection": "/api/3/workflow_collections/e50eba1a-a259-4f21-b75d-200674ae2979",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/917cb5ed-e6cc-4bbc-8130-ac719a202880",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "5fb071de-ac5c-4d08-8ea6-c791bb7a91c7",
+                "title": "ITGlue: Get Domains",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "917cb5ed-e6cc-4bbc-8130-ac719a202880"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Domains",
+              "description": null,
+              "arguments": {
+                "name": "ITGlue",
+                "config": "",
+                "params": {
+                  "org_id": 1,
+                  "domain_id": "",
+                  "page_size": 50,
+                  "page_number": 1,
+                  "additional_fields": ""
+                },
+                "version": "1.0.0",
+                "connector": "itglue",
+                "operation": "get_domains",
+                "operationTitle": "Get Domains",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "c94884ac-8119-4109-8f07-f02276576490"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Domains",
+              "targetStep": "/api/3/workflow_steps/c94884ac-8119-4109-8f07-f02276576490",
+              "sourceStep": "/api/3/workflow_steps/917cb5ed-e6cc-4bbc-8130-ac719a202880",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "a1712262-b42d-47ba-b103-fb0090bbb172"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "f084c2dd-76a8-4556-aca4-3d9509f8f4c2",
+          "id": 3441,
+          "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "createDate": 1656412808.420156,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1656412836.243178,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "itglue"
+          ]
+        }
+      ]
+    }
+  ],
+  "exported_tags": [
+    "itglue"
+  ]
+}
