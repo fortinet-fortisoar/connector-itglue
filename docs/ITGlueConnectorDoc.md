@@ -1,7 +1,8 @@
 ## About the connector
 ITGlue is IT documentation software designed to help you maximize the efficiency, transparency and consistency of your team. This connector facilitates automated operations such as organizations, locations, configurations, domains, and flexible assets
 <p>This document provides information about the ITGlue Connector, which facilitates automated interactions, with a ITGlue server using FortiSOAR&trade; playbooks. Add the ITGlue Connector as a step in FortiSOAR&trade; playbooks and perform automated operations with ITGlue.</p>
-### Version information
+
+## Version information
 
 Connector Version: 1.0.0
 
@@ -28,7 +29,9 @@ For the procedure to configure a connector, click [here](https://docs.fortinet.c
 <tr><td>API Key<br></td><td>Specify the API Key that is configured for your account for using the ITGlue APIs.<br>
 <tr><td>Verify SSL<br></td><td>Specifies whether the SSL certificate for the server is to be verified or not. <br/>By default, this option is set as True.<br></td></tr>
 </tbody></table>
-## Actions supported by the connector
+  
+### Actions supported by the connector
+
 The following automated operations can be included in playbooks and you can also use the annotations to access operations from FortiSOAR&trade; release 4.10.0 and onwards:
 <table border=1><thead><tr><th>Function<br></th><th>Description<br></th><th>Annotation and Category<br></th></tr></thead><tbody><tr><td>Get Organizations<br></td><td>Retrieves all organizations or specific organization from ITGlue based on the input parameters you have specified.<br></td><td>get_organizations <br/>Investigation<br></td></tr>
 <tr><td>Get Locations<br></td><td>Retrieves all locations or specific location from ITGlue based on the input parameters you have specified.<br></td><td>get_locations <br/>Investigation<br></td></tr>
@@ -36,6 +39,7 @@ The following automated operations can be included in playbooks and you can also
 <tr><td>Get Domains<br></td><td>Retrieves all domains or specific domain from ITGlue based on the input parameters you have specified.<br></td><td>get_domains <br/>Investigation<br></td></tr>
 <tr><td>Get Flexible Asset<br></td><td>Retrieves all flexible assets from ITGlue based on the input parameters you have specified.<br></td><td>get_flexible_asset <br/>Investigation<br></td></tr>
 </tbody></table>
+
 ### operation: Get Organizations
 #### Input parameters
 <table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>Organization ID<br></td><td>Specify the ID of the organization based on which you want to retrieve organizations from ITGlue.<br>
@@ -48,8 +52,10 @@ The following automated operations can be included in playbooks and you can also
 </td></tr><tr><td>Page Number<br></td><td>Page number from which you want to retrieve records. The header of the response contains the number of the next page and the total number of results.<br>
 </td></tr><tr><td>Additional Fields<br></td><td>Additional fields, in the JSON format, based on which you want to retrieve organizations from ITGlue.<br>
 </td></tr></tbody></table>
+
 #### Output
 The output contains the following populated JSON schema:
+
 <code><br>{
 </code><code><br>&nbsp;&nbsp;&nbsp;&nbsp;    "id": "",
 </code><code><br>&nbsp;&nbsp;&nbsp;&nbsp;    "type": "",
@@ -69,6 +75,7 @@ The output contains the following populated JSON schema:
 </code><code><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        "updated-at": ""
 </code><code><br>&nbsp;&nbsp;&nbsp;&nbsp;    }
 </code><code><br>}</code>
+
 ### operation: Get Locations
 #### Input parameters
 <table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>Organization ID<br></td><td>Specify the ID of the organization based on which you want to retrieve locations from ITGlue.<br>
@@ -80,8 +87,10 @@ The output contains the following populated JSON schema:
 </td></tr><tr><td>Page Number<br></td><td>Page number from which you want to retrieve records. The header of the response contains the number of the next page and the total number of results.<br>
 </td></tr><tr><td>Additional Fields<br></td><td>Additional fields, in the JSON format, based on which you want to retrieve locations from ITGlue.<br>
 </td></tr></tbody></table>
+
 #### Output
 The output contains the following populated JSON schema:
+
 <code><br>{
 </code><code><br>&nbsp;&nbsp;&nbsp;&nbsp;    "id": "",
 </code><code><br>&nbsp;&nbsp;&nbsp;&nbsp;    "type": "",
@@ -107,6 +116,7 @@ The output contains the following populated JSON schema:
 </code><code><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        "formatted-fax": ""
 </code><code><br>&nbsp;&nbsp;&nbsp;&nbsp;    }
 </code><code><br>}</code>
+  
 ### operation: Get Configurations
 #### Input parameters
 <table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>Organization ID<br></td><td>Specify the ID of the organization based on which you want to retrieve configurations from ITGlue.<br>
@@ -118,8 +128,10 @@ The output contains the following populated JSON schema:
 </td></tr><tr><td>Page Number<br></td><td>Page number from which you want to retrieve records. The header of the response contains the number of the next page and the total number of results.<br>
 </td></tr><tr><td>Additional Fields<br></td><td>Additional fields, in the JSON format, based on which you want to retrieve locations from ITGlue.<br>
 </td></tr></tbody></table>
+
 #### Output
 The output contains the following populated JSON schema:
+
 <code><br>{
 </code><code><br>&nbsp;&nbsp;&nbsp;&nbsp;    "id": "",
 </code><code><br>&nbsp;&nbsp;&nbsp;&nbsp;    "type": "",
@@ -170,6 +182,7 @@ The output contains the following populated JSON schema:
 </code><code><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        }
 </code><code><br>&nbsp;&nbsp;&nbsp;&nbsp;    }
 </code><code><br>}</code>
+  
 ### operation: Get Domains
 #### Input parameters
 <table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>Organization ID<br></td><td>Specify the ID of the organization based on which you want to retrieve domains from ITGlue.<br>
@@ -178,8 +191,10 @@ The output contains the following populated JSON schema:
 </td></tr><tr><td>Page Number<br></td><td>Page number from which you want to retrieve records. The header of the response contains the number of the next page and the total number of results.<br>
 </td></tr><tr><td>Additional Fields<br></td><td>Additional fields, in the JSON format, based on which you want to retrieve locations from ITGlue.<br>
 </td></tr></tbody></table>
+  
 #### Output
 The output contains the following populated JSON schema:
+ 
 <code><br>{
 </code><code><br>&nbsp;&nbsp;&nbsp;&nbsp;    "id": "",
 </code><code><br>&nbsp;&nbsp;&nbsp;&nbsp;    "type": "",
@@ -195,6 +210,7 @@ The output contains the following populated JSON schema:
 </code><code><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        "updated-at": ""
 </code><code><br>&nbsp;&nbsp;&nbsp;&nbsp;    }
 </code><code><br>}</code>
+  
 ### operation: Get Flexible Asset
 #### Input parameters
 <table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>Flexible Asset Type ID<br></td><td>Specify the Type ID of the flexible asset based on which you want to retrieve flexible assets from ITGlue.<br>
@@ -204,8 +220,10 @@ The output contains the following populated JSON schema:
 </td></tr><tr><td>Page Number<br></td><td>Page number from which you want to retrieve records. The header of the response contains the number of the next page and the total number of results.<br>
 </td></tr><tr><td>Additional Fields<br></td><td>Additional fields, in the JSON format, based on which you want to retrieve flexible assets from ITGlue.<br>
 </td></tr></tbody></table>
+
 #### Output
 The output contains the following populated JSON schema:
+ 
 <code><br>{
 </code><code><br>&nbsp;&nbsp;&nbsp;&nbsp;    "id": "",
 </code><code><br>&nbsp;&nbsp;&nbsp;&nbsp;    "type": "",
@@ -251,6 +269,7 @@ The output contains the following populated JSON schema:
 </code><code><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        "updated-at": ""
 </code><code><br>&nbsp;&nbsp;&nbsp;&nbsp;    }
 </code><code><br>}</code>
+  
 ## Included playbooks
 The `Sample - itglue - 1.0.0` playbook collection comes bundled with the ITGlue connector. These playbooks contain steps using which you can perform all supported actions. You can see bundled playbooks in the **Automation** > **Playbooks** section in FortiSOAR<sup>TM</sup> after importing the ITGlue connector.
 
